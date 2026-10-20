@@ -68,9 +68,9 @@
                                         <div class="mb-3">
                                             <label for="estado{{ $venta->id }}" class="form-label">Estado</label>
                                             <select name="estado" id="estado{{ $venta->id }}" class="form-select" required>
-                                                <option value="pendiente" {{ $venta->estado == 'pendiente' ? 'selected' : '' }}>Pendiente</option>
-                                                <option value="confirmada" {{ $venta->estado == 'confirmada' ? 'selected' : '' }}>Confirmada</option>
-                                                <option value="cancelada" {{ $venta->estado == 'cancelada' ? 'selected' : '' }}>Cancelada</option>
+                                                <option value="pendiente" {{ $venta->estado == 'pendiente' ? 'selected' : '' }}>pendiente</option>
+                                                <option value="confirmada" {{ $venta->estado == 'confirmada' ? 'selected' : '' }}>confirmada</option>
+                                                <option value="cancelada" {{ $venta->estado == 'cancelada' ? 'selected' : '' }}>cancelada</option>
                                             </select>
                                         </div>
                                     </div>

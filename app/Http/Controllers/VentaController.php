@@ -74,15 +74,17 @@ class VentaController extends Controller
     }
 
     public function deleteVenta($id)
-    {
-        $venta = Venta::findOrFail($id);
+{
+    $venta = Venta::findOrFail($id);
 
-        if ($venta->estado === 'confirmada') {
-            return back()->with('error', 'No se pueden eliminar ventas con estado confirmada.');
-        }
-
-        $venta->delete();
-
-        return back()->with('success', 'Venta eliminada correctamente.');
+    if ($venta->estado === 'confirmada') {
+        return back();
     }
+
+    DetalleVenta::where('venta_id', $id)->delete();
+
+    $venta->delete();
+
+    return back();
+}
 }
